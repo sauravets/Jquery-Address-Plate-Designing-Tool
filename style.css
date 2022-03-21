@@ -1,17 +1,22 @@
 .form{
     display: block;
-    text-align: center;
-    border: 1px solid black;
     padding-bottom: 50px;
 }
 h2{
     text-align: left;
-    margin-left: 40px;
+    margin-left: 152px;
+}
+.address{
+    margin-left: 152px;
+    font-size: 22px;
+    color: gray;
 }
 #myinput{
     text-align: left;
-    width: 500px;
-    height: 30px;
+    width: 930px;
+    height: 40px;
+    margin-left: 155px;
+    border: 1px solid black;
 }
 .row{
     display: flex;
@@ -25,13 +30,17 @@ h2{
     clear: both;
     display: block;
 }
-.column{
+.background-color{
     height:100px;
     width:100px;
     border-radius: 50px;
     border: 1px solid black;
     cursor: pointer;
 }
+.background-color:active {
+    box-shadow: 0 2px #666;
+    transform: translateY(4px);
+  }
 .text-color{
     height:100px;
     width:100px;
@@ -39,54 +48,71 @@ h2{
     border: 1px solid black;
     cursor: pointer;
 }
- 
+.text-color:active {
+    box-shadow: 0 2px #666;
+    transform: translateY(4px);
+  }
 p{
     text-align: center;
+    font-size: 15px;
 }
 #mydiv{
     height: 100px;
-    width: 500px;
+    width: 900px;
     padding: 10px;
     margin: 3px;
     border: 10px double gray;
-    margin-left: auto;
-    margin-right: auto;
-    padding-top: 40px;
+    padding-top: 65px;
+    font-size: 50px;
+    padding-bottom: 30px;
+    text-align: center;
+    margin-left: 152px;
 }
 .font-style{
-    height:100px;
+    height:90px;
     width:100px;
-    border: double;
+    border: double gray;
     cursor: pointer;
     background-color: #80808029;
+    text-align: center;
+    padding-top: 10px;
 }
+.font-style:active {
+    box-shadow: 0 2px #666;
+    transform: translateY(4px);
+  }
 .font1::before{
-    content:"AG 1234";
+    content:"AG 12345";
     font-family: 'Times New Roman';
-    font-size: 41px;
+    font-size: 31px;
 }
 .font2::before{
-    content:"AG 1234";
+    content:"AG 12345";
     font-family:'Courier';
-    font-size: 41px;
+    font-size: 31px;
 }
 .font3::before{
-    content:"Ag 1234";
-    font-family:'Verdana';
-    font-size: 41px;
+    content:"Ag 12345";
+    font-family: Verdana;
+    font-size: 31px;
 }
 .font4::before{
-    content:"Ag 1234";
+    content:"Ag 12345";
     font-family:'Arial';
-    font-size: 41px;
+    font-size: 31px;
+}
+
+.font-para{
+    text-align: left;
 }
 
 .tick-mark {
     position: relative;
     display: inline-block;
-    width: 30px;
-    height: 30px;
-    top: 29px;
+    width: 45px;
+    height: 35px;
+    top: 35px;
+    left: 30px;
 }
 
 .tick-mark::before {
@@ -95,7 +121,7 @@ p{
     top: 50%;
     height: 50%;
     width: 3px;
-    background-color: #336699;
+    background-color: blueviolet;
     content: "";
     transform: translateX(10px) rotate(-45deg);
     transform-origin: left bottom;
@@ -107,8 +133,47 @@ p{
     bottom: 0;
     height: 3px;
     width: 100%;
-    background-color: #336699;
+    background-color: blueviolet;
     content: "";
     transform: translateX(10px) rotate(-45deg);
     transform-origin: left bottom;
+}
+
+.font-tickMark{
+    position: relative;
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    top: 20px;
+    left: 20px;
+}
+.font-tickMark::before {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    height: 50%;
+    width: 3px;
+    background-color: black;
+    content: "";
+    transform: translateX(10px) rotate(-45deg);
+    transform-origin: left bottom;
+}
+
+.font-tickMark::after {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 100%;
+    background-color: black;
+    content: "";
+    transform: translateX(10px) rotate(-45deg);
+    transform-origin: left bottom;
+}
+
+.new-mark{
+    width: 40px;
+    height: 35px;
+    margin-top: 22px;
+    margin-left: 35px;
 }

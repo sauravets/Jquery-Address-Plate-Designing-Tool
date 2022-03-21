@@ -17,8 +17,8 @@
         <div class="row">
             <div>
                 <label for="anthracite">
-                    <div class="column" id="anthracite" data-bgcolor="antiquewhite" style="background:antiquewhite;">
-                        <div class="tick-mark"></div>
+                    <div class="background-color" data-bgcolor="antiquewhite" style="background:antiquewhite;">
+                        <div class="background-mark"></div>
                     </div>
                 </label>
                 <p>Anthracite</p>
@@ -26,8 +26,8 @@
 
             <div>
                 <label for="black">
-                    <div class="column" id="black" data-bgcolor="black" style="background:black;">
-                        <div class="tick-mark"></div>
+                    <div class="background-color" data-bgcolor="black" style="background:black;">
+                        <div class="background-mark"></div>
                     </div>
                 </label>
                 <p>Black</p>
@@ -36,8 +36,8 @@
 
             <div>
                 <label for="grey">
-                    <div class="column" id="grey" data-bgcolor="grey" style="background:grey;">
-                        <div class="tick-mark"> </div>
+                    <div class="background-color" data-bgcolor="grey" style="background:grey;">
+                        <div class="background-mark"></div>
                     </div>
                 </label>
                 <p>Mid grey</p>
@@ -45,8 +45,8 @@
 
             <div>
                 <label for="white">
-                    <div class="column" id="white" data-bgcolor="white" style="background:white;">
-                        <div class="tick-mark"></div>
+                    <div class="background-color" data-bgcolor="white" style="background:white;">
+                        <div class="background-mark"></div>
                     </div>
                 </label>
                 <p>White</p>
@@ -58,17 +58,18 @@
             <div class="row">
                 <div>
                     <label for="double-cream">
-                        <div class="text-color" id="double-cream" data-color="gold" style="background:gold">
-                            <div class="tick-mark"></div>
+                        <div class="text-color" data-color="gold"
+                            style="background:gold;box-shadow: inset 0px 0px 0px 3px grey;border: 1px solid red">
+                            <div class="text-mark"></div>
                         </div>
                     </label>
-                    <p>double-cream</p>
+                    <p>DoubleCream</p>
                 </div>
 
                 <div>
                     <label for="silver">
-                        <div class="text-color" id="silver" data-color="silver" style="background:silver;">
-                            <div class="tick-mark"></div>
+                        <div class="text-color" data-color="silver" style="background:silver;">
+                            <div class="text-mark"></div>
                         </div>
                     </label>
                     <p>Silver</p>
@@ -76,16 +77,16 @@
 
                 <div>
                     <label for="White">
-                        <div class="text-color" id="White" data-color="white" style="background:white;">
-                            <div class="tick-mark"></div>
+                        <div class="text-color" data-color="white" style="background:white;">
+                            <div class="text-mark"></div>
                         </div>
                     </label>
                     <p>White</p>
                 </div>
                 <div>
                     <label for="Black">
-                        <div class="text-color" id="Black" data-color="black" style="background:black;">
-                            <div class="tick-mark"></div>
+                        <div class="text-color" data-color="black" style="background:black;">
+                            <div class="text-mark"></div>
                         </div>
                     </label>
                     <p>Black</p>
@@ -96,39 +97,42 @@
             <div class="row">
                 <div>
                     <label for="font1">
-                        <div class="font-style font1" id="font1" data-font="Times New Roman">
-                            <div class="tick-mark"></div>
-                        </div>                        
-                    </label>                    
-                    <p>Font1</p>                    
+                        <div class="font-style font1" data-font="Times New Roman">
+                            <div class="font-mark"></div>
+                        </div>
+                    </label>
+                    <p class="font-para">Font1</p>
                 </div>
 
                 <div>
                     <label for="font2">
-                        <div class="font-style font2" id="font2" data-font="Courier">
-                            <div class="tick-mark"></div>
+                        <div class="font-style font2" data-font="Courier">
+                            <!-- <img src="tick-mark.png" class="new-mark" alt="" height="30px" width="30px">-->
+                            <div class="font-mark"></div>
                         </div>
-                    </label>                    
-                    <p>Font2</p>                    
+                        <p class="font-para">Font2</p>
+                    </label>
+
                 </div>
                 <div>
                     <label for="font3">
-                        <div class="font-style font3" id="font3" data-font="Verdana">
-                            <div class="tick-mark"></div>
+                        <div class="font-style font3" data-font="Verdana" data-text="capitalize">
+                            <div class="font-mark"></div>
                         </div>
-                    </label>                    
-                    <p>Font3</p>                    
+                    </label>
+                    <p class="font-para">Font3</p>
                 </div>
                 <div>
                     <label for="font4">
-                        <div class="font-style font4" id="font4" data-font="Arial">
-                            <div class="tick-mark"></div>
+                        <div class="font-style font4" data-font="Arial" data-text="capitalize">
+                            <div class="font-mark"></div>
                         </div>
-                    </label>                    
-                    <p>Font4</p>                
+                    </label>
+                    <p class="font-para">Font4</p>
                 </div>
             </div>
-            <label for="Address">Type:Address going on sign</label><br><br>
+            <br><br>
+            <label for="Address" class="address">Type:Address going on sign</label><br><br>
             <input type="text" id="myinput" placeholder="Enter Address..."><br><br>
             <div id="mydiv"></div>
     </form>
