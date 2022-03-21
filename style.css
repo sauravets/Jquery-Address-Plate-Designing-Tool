@@ -144,7 +144,7 @@ p{
     display: inline-block;
     width: 35px;
     height: 35px;
-    top: 20px;
+    top: -45px;
     left: 20px;
 }
 .font-tickMark::before {
@@ -171,9 +171,9 @@ p{
     transform-origin: left bottom;
 }
 
-.new-mark{
+/* .new-mark{
     width: 40px;
     height: 35px;
     margin-top: 22px;
     margin-left: 35px;
-}
+} */
