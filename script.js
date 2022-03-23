@@ -34,4 +34,16 @@ jQuery(document).ready(function () {
         jQuery(".text-mark").removeClass("tick-mark");
         jQuery(".font-mark").removeClass("font-tickMark");
     }
+    jQuery(".done").click(function(e){
+        e.preventDefault();
+        jQuery("#myform").show();
+    });
+    jQuery(".close").click(function(e){
+        e.preventDefault();
+        jQuery("#myform").hide();        
+    });
+    jQuery(".save").click(function(e){
+        e.preventDefault();
+        
+    });
 });
