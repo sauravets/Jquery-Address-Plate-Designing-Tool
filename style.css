@@ -34,7 +34,7 @@ h2{
     height:100px;
     width:100px;
     border-radius: 50px;
-    border: 1px solid black;
+    border: 2px solid black;
     cursor: pointer;
 }
 .background-color:active {
@@ -45,7 +45,7 @@ h2{
     height:100px;
     width:100px;
     border-radius: 50px;
-    border: 1px solid black;
+    border: 2px solid black;
     cursor: pointer;
 }
 .text-color:active {
@@ -56,24 +56,32 @@ p{
     text-align: center;
     font-size: 15px;
 }
+.container {
+    text-align: center;
+    display: inline-block;
+    align-items: center;
+    flex-direction: column;
+    padding: 2%;
+    border: 1px solid black;
+    margin-left: 155px;
+    }
 #mydiv{
     height: 100px;
-    width: 900px;
+    width: 855px;
     padding: 10px;
     margin: 3px;
-    border: 10px double gray;
+    border: 1px solid black;
     padding-top: 65px;
     font-size: 50px;
     padding-bottom: 30px;
     text-align: center;
-    margin-left: 152px;
 }
 .font-style{
     height:90px;
     width:100px;
-    border: double gray;
+    border: double #e3e3dd;
     cursor: pointer;
-    background-color: #80808029;
+    background-color:#e9e9e9;
     text-align: center;
     padding-top: 10px;
 }
