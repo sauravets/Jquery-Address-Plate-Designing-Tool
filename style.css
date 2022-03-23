@@ -6,20 +6,9 @@ h2{
     text-align: left;
     margin-left: 152px;
 }
-.address{
-    margin-left: 152px;
-    font-size: 22px;
-    color: gray;
-}
-#myinput{
-    text-align: left;
-    width: 930px;
-    height: 40px;
-    margin-left: 155px;
-    border: 1px solid black;
-}
+
 .row{
-    display: flex;
+   display: flex;
    justify-content: space-around;
    align-items: flex-start;
    margin-left: 80px;
@@ -52,31 +41,7 @@ h2{
     box-shadow: 0 2px #666;
     transform: translateY(4px);
   }
-p{
-    text-align: center;
-    font-size: 15px;
-}
-.container {
-    text-align: center;
-    display: inline-block;
-    align-items: center;
-    flex-direction: column;
-    padding: 2%;
-    border: 1px solid black;
-    margin-left: 155px;
-    }
-#mydiv{
-    height: 100px;
-    width: 855px;
-    padding: 10px;
-    margin: 3px;
-    border: 1px solid black;
-    padding-top: 65px;
-    font-size: 50px;
-    padding-bottom: 30px;
-    text-align: center;
-}
-.font-style{
+  .font-style{
     height:90px;
     width:100px;
     border: double #e3e3dd;
@@ -112,6 +77,43 @@ p{
 
 .font-para{
     text-align: left;
+}
+p{
+    text-align: center;
+    font-size: 15px;
+}
+
+.address{
+    margin-left: 152px;
+    font-size: 22px;
+    color: gray;
+    }
+#myinput{
+    text-align: left;
+    width: 930px;
+    height: 40px;
+    margin-left: 155px;
+    border: 1px solid black;
+    }
+.container {
+    text-align: center;
+    display: inline-block;
+    align-items: center;
+    flex-direction: column;
+    padding: 2%;
+    border: 1px solid black;
+    margin-left: 155px;
+    }
+#mydiv{
+    height: 100px;
+    width: 855px;
+    padding: 10px;
+    margin: 3px;
+    border: 1px solid black;
+    padding-top: 70px;
+    font-size: 40px;
+    padding-bottom: 30px;
+    text-align: center;
 }
 
 .tick-mark {
@@ -152,7 +154,7 @@ p{
     display: inline-block;
     width: 35px;
     height: 35px;
-    top: -45px;
+    top: -50px;
     left: 20px;
 }
 .font-tickMark::before {
@@ -179,9 +181,92 @@ p{
     transform-origin: left bottom;
 }
 
-/* .new-mark{
-    width: 40px;
-    height: 35px;
-    margin-top: 22px;
-    margin-left: 35px;
-} */
+/* Starting Media Queries */
+@media only screen and (max-width:1108px){
+    #myinput{
+        width: 819px;
+        margin-left: 95px;
+    }
+    #mydiv{
+        width: 755px;
+    }
+    .container {
+        margin-left: 95px;
+    }
+}
+
+@media only screen and (max-width:992px){
+    #myinput{
+        width: 600px;
+        margin-left: 122px;
+    }
+    #mydiv{
+        width: 538px;
+    }
+    .container {
+        margin-left: 122px;
+    }
+}
+
+@media only screen and (max-width:768px){
+     #myinput{
+        width: 430px;
+        margin-left: 122px;
+    }
+    #mydiv{
+         width: 378px;
+        height: 70px;
+        padding-top: 30px;
+    }
+    .container {
+        margin-left: 122px;
+    }
+}
+
+@media only screen and (max-width:576px){
+    h2{
+         text-align: center;
+        margin: 0px;
+        margin-bottom: 30px;
+    }
+    .row{
+        display: block;
+        margin: 0px;
+        margin-bottom: 40px;
+    }
+    .background-color{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .text-color{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .font-style{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 50px;
+    }
+    .address{
+        margin-left: 130px;
+        font-size: 18px;
+    }
+    #myinput{
+        width: 276px;
+        margin-left: 130px;
+        height: 30px;
+    }
+    #mydiv{
+        width: 230px;
+        height: 50px;
+        padding-bottom: 50px;
+        padding-top: 30px;
+        font-size: 28px;
+    }
+    .container {
+        margin-left: 130px;
+    }
+}
