@@ -204,11 +204,12 @@ p{
       border: 3px solid #f1f1f1;
       width: 450px;
       position: fixed;
-      left: 350px;
+      left: 375px;
       bottom: 50px;
       top: 0px;
       bottom: 0px;
       background: white;
+      overflow: auto;
   }
   /* Add styles to the form container */
 .form-container{
@@ -271,6 +272,9 @@ p{
     .container {
         margin-left: 95px;
     }
+    .form-popup{
+        left: 310px;
+    }
 }
 
 @media only screen and (max-width:992px){
@@ -284,7 +288,11 @@ p{
     .container {
         margin-left: 122px;
     }
+    .form-popup{
+    left: 200px;
+    }
 }
+
 
 @media only screen and (max-width:768px){
      #myinput{
@@ -298,6 +306,9 @@ p{
     }
     .container {
         margin-left: 122px;
+    }
+    .form-popup{
+    left: 150px;
     }
 }
 
@@ -346,5 +357,8 @@ p{
     }
     .container {
         margin-left: 130px;
+    }
+    .form-popup{
+        left: 50px;
     }
 }

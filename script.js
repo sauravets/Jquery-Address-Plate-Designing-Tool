@@ -34,16 +34,62 @@ jQuery(document).ready(function () {
         jQuery(".text-mark").removeClass("tick-mark");
         jQuery(".font-mark").removeClass("font-tickMark");
     }
-    jQuery(".done").click(function(e){
+    jQuery(".done").click(function (e) {
         e.preventDefault();
         jQuery("#myform").show();
     });
-    jQuery(".close").click(function(e){
+    jQuery(".close").click(function (e) {
         e.preventDefault();
-        jQuery("#myform").hide();        
+        jQuery("#myform").hide();
     });
-    jQuery(".save").click(function(e){
+    // jQuery(".save").click(function (e) {
+    //     e.preventDefault();
+    //     let customer_information;
+    //     // if no existing data create an array
+    //     customer_information = !!localStorage.getItem('users') ? JSON.parse(localStorage.getItem('users')):[];
+    //     let firstName = jQuery("#firstName").val();
+    //     let lastName = jQuery("#lastName").val();
+    //     let email = jQuery("#email").val();
+    //     let users = {
+    //         firstName: firstName,
+    //         lastName: lastName,
+    //         email: email
+    //     };
+    //     // customer_information.push(users);
+    //   localStorage.setItem('users',JSON.stringify(users));
+    // });
+    jQuery(".save").click(function (e) {
         e.preventDefault();
-        
+        let firstName = jQuery("#firstName").val();
+        let lastName = jQuery("#lastName").val();
+        let email = jQuery("#email").val();
+        let myinput = jQuery("#myinput").val();
+        let users = {
+            firstName: firstName,
+            lastName: lastName,
+            email: email,
+            address_plate: myinput
+        };
+        let customerArr = [];
+
+        if (!localStorage.getItem('Users')) {
+            customerArr.push(users);
+            localStorage.setItem('Users', JSON.stringify(customerArr));
+        } else {
+            customerArr = JSON.parse(localStorage.getItem('Users'));
+            customerArr.push(users);
+            localStorage.setItem('Users', JSON.stringify(customerArr));
+        }
+        // jQuery("#entries").html("hello");
+    });
+    show_entries();
+
+    function show_entries() {
+        let entries = JSON.parse(localStorage.getItem('Users'));
+        console.log(entries);
+        // document.write(JSON.stringify(entries));
+    }
+    jQuery(".try").click(function () {
+        jQuery("#entries").html("hello");
     });
 });
