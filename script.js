@@ -65,10 +65,10 @@ jQuery(document).ready(function () {
         let email = jQuery("#email").val();
         let myinput = jQuery("#myinput").val();
         let users = {
-            firstName: firstName,
-            lastName: lastName,
-            email: email,
-            address_plate: myinput
+            FirstName: firstName,
+            LastName: lastName,
+            Email: email,
+            Address_Plate: myinput
         };
         let customerArr = [];
 
@@ -80,16 +80,14 @@ jQuery(document).ready(function () {
             customerArr.push(users);
             localStorage.setItem('Users', JSON.stringify(customerArr));
         }
-        // jQuery("#entries").html("hello");
     });
-    show_entries();
+    show_customers_entries();
 
-    function show_entries() {
-        let entries = JSON.parse(localStorage.getItem('Users'));
-        console.log(entries);
-        // document.write(JSON.stringify(entries));
+    function show_customers_entries() {        
+        jQuery("#customerInformation").html(localStorage.getItem('Users'));         
+        // jQuery("#customerInformation").append("<li>" + localStorage.getItem('Users') + "</li>")
+        let address_plate = jQuery("#mydiv"); 
+        jQuery("#addressPlate").html(address_plate);
+        console.log(address_plate);
     }
-    jQuery(".try").click(function () {
-        jQuery("#entries").html("hello");
-    });
 });

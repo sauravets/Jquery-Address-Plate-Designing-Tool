@@ -6,6 +6,9 @@ h2{
     text-align: left;
     margin-left: 152px;
 }
+.customerDetails{
+    text-align: center;
+}
 
 .row{
    display: flex;
@@ -98,8 +101,6 @@ p{
 .container {
     text-align: center;
     display: inline-block;
-    align-items: center;
-    flex-direction: column;
     padding: 2%;
     border: 1px solid black;
     margin-left: 155px;
