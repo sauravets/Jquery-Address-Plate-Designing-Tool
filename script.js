@@ -6,33 +6,40 @@ jQuery(document).ready(function () {
     // Change background-color in address plate-
     jQuery(".background-color").click(function () {
         let new_color = jQuery(this).data("bgcolor");
-        remove_tickMark();
+        removebodyMark();
         jQuery(this).find('.background-mark').addClass("tick-mark");
         jQuery("#mydiv").css('backgroundColor', new_color);
+        
     });
     // Change text-color in address plate-
     jQuery(".text-color").click(function () {
         let txt_color = jQuery(this).data("color");
-        remove_tickMark();
+        removetextMark();
         jQuery(this).find(".text-mark").addClass("tick-mark");
         jQuery("#mydiv").css({ color: txt_color });
     });
     // Change font-style in address plate-
     jQuery(".font-style").click(function () {
         let font_style = jQuery(this).data("font");
-        remove_tickMark();
+        removefontMark();
         jQuery(this).find(".font-mark").addClass("font-tickMark");
         jQuery("#mydiv").css({ fontFamily: font_style });
         jQuery("#mydiv").css({ 'text-transform': 'uppercase' });
         let capitalized = jQuery(this).data("text");
         jQuery("#mydiv").css({ textTransform: capitalized });
     });
-    remove_tickMark();
+    removebodyMark();
     //  function use to remove tick-mark from elements-
-    function remove_tickMark() {
+    function removebodyMark() {
         jQuery(".background-mark").removeClass("tick-mark");
+    }
+    removetextMark();
+    function removetextMark(){
         jQuery(".text-mark").removeClass("tick-mark");
-        jQuery(".font-mark").removeClass("font-tickMark");
+    }
+    removefontMark();
+    function removefontMark(){
+        jQuery(".font-mark").removeClass("tick-mark");
     }
     jQuery(".done").click(function (e) {
         e.preventDefault();
@@ -64,11 +71,19 @@ jQuery(document).ready(function () {
         let lastName = jQuery("#lastName").val();
         let email = jQuery("#email").val();
         let myinput = jQuery("#myinput").val();
+        let new_color = jQuery(".background-color").data("bgcolor");
+        // let new_color = jQuery("#mydiv").data("bgcolor");
+        console.log(new_color);
+        let txt_color = jQuery(".text-color").data("color");
+        let font_style = jQuery(".font-style").data("font");
         let users = {
             FirstName: firstName,
             LastName: lastName,
             Email: email,
-            Address_Plate: myinput
+            Address_Plate: myinput,
+            Background:new_color,
+            TextColor:txt_color,
+            FontStyle:font_style
         };
         let customerArr = [];
 
@@ -84,10 +99,8 @@ jQuery(document).ready(function () {
     show_customers_entries();
 
     function show_customers_entries() {        
-        jQuery("#customerInformation").html(localStorage.getItem('Users'));         
-        // jQuery("#customerInformation").append("<li>" + localStorage.getItem('Users') + "</li>")
-        let address_plate = jQuery("#mydiv"); 
-        jQuery("#addressPlate").html(address_plate);
-        console.log(address_plate);
+        // // jQuery("#customerInformation").append("<li>" + localStorage.getItem('Users') + "</li>")
+        let customerInformation = localStorage.getItem('Users');
+        jQuery("#customerInformation").html(customerInformation);
     }
 });
