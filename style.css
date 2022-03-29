@@ -261,6 +261,14 @@ p{
   .information{
       text-align: center;
   }
+  /* #customerInformation{
+    padding: 10px;
+    padding-top: 5px;
+    cursor: pointer;
+    background-color: #fff; 
+    border-bottom: 1px solid #d4d4d4; 
+    width: 350px
+  } */
 /* Starting Media Queries */
 @media only screen and (max-width:1108px){
     #myinput{

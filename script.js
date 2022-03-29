@@ -9,7 +9,7 @@ jQuery(document).ready(function () {
         removebodyMark();
         jQuery(this).find('.background-mark').addClass("tick-mark");
         jQuery("#mydiv").css('backgroundColor', new_color);
-        
+
     });
     // Change text-color in address plate-
     jQuery(".text-color").click(function () {
@@ -34,12 +34,12 @@ jQuery(document).ready(function () {
         jQuery(".background-mark").removeClass("tick-mark");
     }
     removetextMark();
-    function removetextMark(){
+    function removetextMark() {
         jQuery(".text-mark").removeClass("tick-mark");
     }
     removefontMark();
-    function removefontMark(){
-        jQuery(".font-mark").removeClass("tick-mark");
+    function removefontMark() {
+        jQuery(".font-mark").removeClass("font-tickMark");
     }
     jQuery(".done").click(function (e) {
         e.preventDefault();
@@ -71,19 +71,18 @@ jQuery(document).ready(function () {
         let lastName = jQuery("#lastName").val();
         let email = jQuery("#email").val();
         let myinput = jQuery("#myinput").val();
-        let new_color = jQuery(".background-color").data("bgcolor");
+        let new_color = jQuery('.tick-mark').closest('.background-color').attr('style');
         // let new_color = jQuery("#mydiv").data("bgcolor");
-        console.log(new_color);
-        let txt_color = jQuery(".text-color").data("color");
-        let font_style = jQuery(".font-style").data("font");
+        let txt_color = jQuery('.tick-mark').closest('.text-color').attr('style');
+        let font_style = jQuery('.font-tickMark').closest('.font-style').data('font');
         let users = {
             FirstName: firstName,
             LastName: lastName,
             Email: email,
             Address_Plate: myinput,
-            Background:new_color,
-            TextColor:txt_color,
-            FontStyle:font_style
+            Background: new_color,
+            TextColor: txt_color,
+            FontStyle: font_style
         };
         let customerArr = [];
 
@@ -98,9 +97,21 @@ jQuery(document).ready(function () {
     });
     show_customers_entries();
 
-    function show_customers_entries() {        
-        // // jQuery("#customerInformation").append("<li>" + localStorage.getItem('Users') + "</li>")
-        let customerInformation = localStorage.getItem('Users');
-        jQuery("#customerInformation").html(customerInformation);
+    function show_customers_entries() {
+        let customerInformation = JSON.parse(localStorage.getItem('Users'));
+        //  jQuery("#customerInformation").html(customerInformation);
+        console.log(customerInformation);        
+        let customerDetails = jQuery("#customerInformation");
+        let ul = jQuery('<ul></ul>');
+        ul.attr('style', 'padding: 0; margin: 0;');
+        ul.attr('id', 'theList');
+        for (i = 0; i <= customerInformation.length - 1; i++) {
+            let li = jQuery('<li></li>');           // create li element.
+            li.html = customerInformation[i];       // assigning text to li using array value.            
+            li.attr('style', 'display: block;');    // remove the bullets.
+            ul.append(li);      
+            console.log(customerInformation[i]);                    // append li to ul.
+        }
+        customerDetails.append(ul);                 // add list to the div.       
     }
 });
