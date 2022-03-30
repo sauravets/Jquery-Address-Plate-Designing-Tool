@@ -97,21 +97,37 @@ jQuery(document).ready(function () {
     });
     show_customers_entries();
 
+
     function show_customers_entries() {
         let customerInformation = JSON.parse(localStorage.getItem('Users'));
         //  jQuery("#customerInformation").html(customerInformation);
-        console.log(customerInformation);        
+        // let array = jQuery.map(customerInformation, function(value, index){
+        //     return [index,value];
+        // });
+        for(let i=0; i<=customerInformation.length; i++){
+            let takeObject = customerInformation[i];
+            let convertToarray = Object.entries(takeObject);            
+            // console.log(convertToarray);
+            let getArray = convertToarray.values();
+            for (let letter of getArray) {
+            console.log(letter);
+           }
+        //      convertArray = jQuery.map(takeObject, function(value, index){
+        //     return [index,value];
+        // });
+        // console.log(convertArray);
+        }
+        // customerInformation.html('<li>'+ array + '</li>');
         let customerDetails = jQuery("#customerInformation");
         let ul = jQuery('<ul></ul>');
         ul.attr('style', 'padding: 0; margin: 0;');
         ul.attr('id', 'theList');
-        for (i = 0; i <= customerInformation.length - 1; i++) {
-            let li = jQuery('<li></li>');           // create li element.
-            li.html = customerInformation[i];       // assigning text to li using array value.            
-            li.attr('style', 'display: block;');    // remove the bullets.
-            ul.append(li);      
-            console.log(customerInformation[i]);                    // append li to ul.
-        }
-        customerDetails.append(ul);                 // add list to the div.       
+        for (i = 0; i <= letter.length - 1; i++) {
+            let li = jQuery('<li></li>');            // create li element.
+            li.html = letter[i];                      // assigning text to li using array value.                       
+            li.attr('style', 'display: block;');     // remove the bullets.
+            ul.append(li);                           // append li to ul.
+        }   
+        customerDetails.append(ul);                  // add list to the div.             
     }
 });
