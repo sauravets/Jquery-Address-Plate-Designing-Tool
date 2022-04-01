@@ -100,7 +100,7 @@ jQuery(document).ready(function () {
         for (let i = 0; i <= customerInformation.length - 1; i++) {
             let takeObject = customerInformation[i];
             // let convertToarray = Object.entries(takeObject);  
-            let convertToarray = $.map(takeObject, function(value, index){
+            let convertToarray = jQuery.map(takeObject, function(value, index){
                 return [index,value];
             });
             for (let a = 0; a <= convertToarray.length-1 ; a++) {
