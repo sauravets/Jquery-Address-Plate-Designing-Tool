@@ -72,7 +72,6 @@ jQuery(document).ready(function () {
         let email = jQuery("#email").val();
         let myinput = jQuery("#myinput").val();
         let new_color = jQuery('.tick-mark').closest('.background-color').attr('style');
-        // let new_color = jQuery("#mydiv").data("bgcolor");
         let txt_color = jQuery('.tick-mark').closest('.text-color').attr('style');
         let font_style = jQuery('.font-tickMark').closest('.font-style').data('font');
         let users = {
@@ -85,7 +84,6 @@ jQuery(document).ready(function () {
             FontStyle: font_style
         };
         let customerArr = [];
-
         if (!localStorage.getItem('Users')) {
             customerArr.push(users);
             localStorage.setItem('Users', JSON.stringify(customerArr));
@@ -97,37 +95,31 @@ jQuery(document).ready(function () {
     });
     show_customers_entries();
 
-
     function show_customers_entries() {
         let customerInformation = JSON.parse(localStorage.getItem('Users'));
-        //  jQuery("#customerInformation").html(customerInformation);
-        // let array = jQuery.map(customerInformation, function(value, index){
-        //     return [index,value];
-        // });
-        for(let i=0; i<=customerInformation.length; i++){
+        for (let i = 0; i <= customerInformation.length - 1; i++) {
             let takeObject = customerInformation[i];
-            let convertToarray = Object.entries(takeObject);            
-            // console.log(convertToarray);
-            let getArray = convertToarray.values();
-            for (let letter of getArray) {
-            console.log(letter);
-           }
-        //      convertArray = jQuery.map(takeObject, function(value, index){
-        //     return [index,value];
-        // });
-        // console.log(convertArray);
+            // let convertToarray = Object.entries(takeObject);  
+            let convertToarray = $.map(takeObject, function(value, index){
+                return [index,value];
+            });
+            for (let a = 0; a <= convertToarray.length-1 ; a++) {
+                let convertedArray = convertToarray[a];                   
+                jQuery("#customerInformation").append('<ul> <li>'+ convertedArray + '</li> </ul>');
+            }
         }
-        // customerInformation.html('<li>'+ array + '</li>');
-        let customerDetails = jQuery("#customerInformation");
-        let ul = jQuery('<ul></ul>');
-        ul.attr('style', 'padding: 0; margin: 0;');
-        ul.attr('id', 'theList');
-        for (i = 0; i <= letter.length - 1; i++) {
-            let li = jQuery('<li></li>');            // create li element.
-            li.html = letter[i];                      // assigning text to li using array value.                       
-            li.attr('style', 'display: block;');     // remove the bullets.
-            ul.append(li);                           // append li to ul.
-        }   
-        customerDetails.append(ul);                  // add list to the div.             
     }
 });
+
+            // let customerDetails = jQuery("#table");
+            // let ul = jQuery('<ul></ul>');
+            // ul.attr('style', 'padding: 0; margin: 0;');
+            // ul.attr('id', 'theList');
+            // for (i = 0; i <= done.length - 1; i++) {
+            //     let li = jQuery('<li></li>');                      // create li element.
+            //     li.html = done[i];                                // assigning text to li using array value.
+            //     console.log(li.html);
+            //     li.attr('style', 'display: block;');              // remove the bullets.
+            //     ul.append(li);                                   // append li to ul.
+            // }  
+            // customerDetails.append(ul);                         // add list to the div.
