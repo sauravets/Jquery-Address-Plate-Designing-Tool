@@ -99,13 +99,14 @@ jQuery(document).ready(function () {
         let customerInformation = JSON.parse(localStorage.getItem('Users'));
         for (let i = 0; i <= customerInformation.length - 1; i++) {
             let takeObject = customerInformation[i];
-            // let convertToarray = Object.entries(takeObject);  
+            // let convertToarray = Object.entries(takeObject);
             let convertToarray = jQuery.map(takeObject, function(value, index){
                 return [index,value];
             });
+            console.log(convertToarray);
             for (let a = 0; a <= convertToarray.length-1 ; a++) {
-                let convertedArray = convertToarray[a];                   
-                jQuery("#customerInformation").append('<ul> <li>'+ convertedArray + '</li> </ul>');
+                let convertedArray = convertToarray[a];
+                jQuery("#table").append('<tr> <td>'  + convertedArray + '</td> </tr> <br>');
             }
         }
     }
