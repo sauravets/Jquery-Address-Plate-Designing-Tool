@@ -268,15 +268,18 @@ p{
         margin-left: auto;
         margin-right: auto;    
   }
-  tr td{
+  #customerInformation{
+      display: inline-block;
+  }
+  th, td{
     border: 1px solid #dddddd;
     text-align: center;
     padding: 8px;
     width: 50%;
   }
-  tr:nth-child(even) {
+  /* tr:nth-child(even) {
     background-color: #dddddd;
-  }
+  } */
   /* li:last-child{
       overflow-wrap: break-word;
   } */

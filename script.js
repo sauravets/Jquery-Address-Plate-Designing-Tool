@@ -49,22 +49,7 @@ jQuery(document).ready(function () {
         e.preventDefault();
         jQuery("#myform").hide();
     });
-    // jQuery(".save").click(function (e) {
-    //     e.preventDefault();
-    //     let customer_information;
-    //     // if no existing data create an array
-    //     customer_information = !!localStorage.getItem('users') ? JSON.parse(localStorage.getItem('users')):[];
-    //     let firstName = jQuery("#firstName").val();
-    //     let lastName = jQuery("#lastName").val();
-    //     let email = jQuery("#email").val();
-    //     let users = {
-    //         firstName: firstName,
-    //         lastName: lastName,
-    //         email: email
-    //     };
-    //     // customer_information.push(users);
-    //   localStorage.setItem('users',JSON.stringify(users));
-    // });
+    
     jQuery(".save").click(function (e) {
         e.preventDefault();
         let firstName = jQuery("#firstName").val();
@@ -96,31 +81,25 @@ jQuery(document).ready(function () {
     show_customers_entries();
 
     function show_customers_entries() {
-        let customerInformation = JSON.parse(localStorage.getItem('Users'));
+        let customerInformation = JSON.parse(localStorage.getItem('Users'));        
         for (let i = 0; i <= customerInformation.length - 1; i++) {
             let takeObject = customerInformation[i];
             // let convertToarray = Object.entries(takeObject);
-            let convertToarray = jQuery.map(takeObject, function(value, index){
-                return [index,value];
+            let convertToarray = jQuery.map(takeObject, function (value, index) {
+                return [index, value];
             });
-            console.log(convertToarray);
-            for (let a = 0; a <= convertToarray.length-1 ; a++) {
-                let convertedArray = convertToarray[a];
-                jQuery("#table").append('<tr> <td>'  + convertedArray + '</td> </tr> <br>');
-            }
+            let tbody ='';          
+                tbody += "<tr  id='row_" + "'>";
+                tbody += "<td>" +takeObject.FirstName+ "</td>"; 
+                tbody += "<td>" +takeObject.LastName+ "</td>"; 
+                tbody += "<td>" +takeObject.Email+ "</td>"; 
+                tbody += "<td>" +takeObject. Address_Plate+ "</td>"; 
+                tbody += "<td>" +takeObject.Background+ "</td>"; 
+                tbody += "<td>" +takeObject.TextColor+ "</td>"; 
+                tbody += "<td>" +takeObject.FontStyle+ "</td>"; 
+                tbody += "</tr>";
+                jQuery("#table").append(tbody);
+            // }
         }
     }
 });
-
-            // let customerDetails = jQuery("#table");
-            // let ul = jQuery('<ul></ul>');
-            // ul.attr('style', 'padding: 0; margin: 0;');
-            // ul.attr('id', 'theList');
-            // for (i = 0; i <= done.length - 1; i++) {
-            //     let li = jQuery('<li></li>');                      // create li element.
-            //     li.html = done[i];                                // assigning text to li using array value.
-            //     console.log(li.html);
-            //     li.attr('style', 'display: block;');              // remove the bullets.
-            //     ul.append(li);                                   // append li to ul.
-            // }  
-            // customerDetails.append(ul);                         // add list to the div.
