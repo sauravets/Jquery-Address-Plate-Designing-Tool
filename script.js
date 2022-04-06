@@ -56,8 +56,8 @@ jQuery(document).ready(function () {
         let lastName = jQuery("#lastName").val();
         let email = jQuery("#email").val();
         let myinput = jQuery("#myinput").val();
-        let new_color = jQuery('.tick-mark').closest('.background-color').attr('style');
-        let txt_color = jQuery('.tick-mark').closest('.text-color').attr('style');
+        let new_color = jQuery('.tick-mark').closest('.background-color').data('bgcolor');
+        let txt_color = jQuery('.tick-mark').closest('.text-color').data('color');
         let font_style = jQuery('.font-tickMark').closest('.font-style').data('font');
         let users = {
             FirstName: firstName,
@@ -85,9 +85,9 @@ jQuery(document).ready(function () {
         for (let i = 0; i <= customerInformation.length - 1; i++) {
             let takeObject = customerInformation[i];
             // let convertToarray = Object.entries(takeObject);
-            let convertToarray = jQuery.map(takeObject, function (value, index) {
-                return [index, value];
-            });
+            // let convertToarray = jQuery.map(takeObject, function (value, index) {
+            //     return [index, value];
+            // });
             let tbody = '';
             tbody += "<tr  id='tbody" + "'>";
             tbody += "<td>" + takeObject.FirstName + "</td>";
@@ -101,11 +101,46 @@ jQuery(document).ready(function () {
             jQuery("#table").append(tbody);
         }
     }
-    jQuery("#search").on("keyup", function (e) {
-        e.preventDefault();
-        let value = jQuery(this).val().toLowerCase();              
-        jQuery("#myid tr").filter(function () {            
-            jQuery(this).toggle(jQuery(this).text().toLowerCase().indexOf(value) > -1)                       
-        });
-    });
+    // jQuery("#search").on("keyup", function (e) {
+    //     e.preventDefault();
+    // let value = jQuery(this).val().toLowerCase();              
+    // jQuery("#tbody tr").filter(function () {            
+    //     jQuery(this).toggle(jQuery(this).text().toLowerCase().indexOf(value) > -1)                           
+    // });
+    // jQuery("#search").on("keyup", function () {
+    // let value = jQuery(this).val().toLowerCase();
+    // jQuery("table tr").each(function(index) {
+    //     if (index != 0) {
+    //         $row = jQuery(this);
+    //         let id = $row.find("td:first").text().toLowerCase();
+    //         if (id.indexOf(value) != 0) {
+    //             jQuery(this).hide();
+    //         }
+    //         else {
+    //             jQuery(this).show();
+    //         }
+    //     }
+    // });
+    jQuery("#search").keyup(function () {
+        let value = jQuery(this).val().toLowerCase();
+        let tbody = '';
+        let object = JSON.parse(localStorage.getItem('Users'));
+        for (let i = 0; i <= object.length; i++) {
+            let get_object = object[i];
+            if (value) {
+                if (get_object.indexOf(value) > -1) {
+                    tbody += "<tr  id='tbody" + "'>";
+                    tbody += "<td>" + takeObject.FirstName + "</td>";
+                    tbody += "<td>" + takeObject.LastName + "</td>";
+                    tbody += "<td>" + takeObject.Email + "</td>";
+                    tbody += "<td>" + takeObject.Address_Plate + "</td>";
+                    tbody += "<td>" + takeObject.Background + "</td>";
+                    tbody += "<td>" + takeObject.TextColor + "</td>";
+                    tbody += "<td>" + takeObject.FontStyle + "</td>";
+                    tbody += "</tr>";
+                }
+            }
+        }
+    })
+    // });
 });
