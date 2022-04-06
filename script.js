@@ -49,7 +49,7 @@ jQuery(document).ready(function () {
         e.preventDefault();
         jQuery("#myform").hide();
     });
-    
+
     jQuery(".save").click(function (e) {
         e.preventDefault();
         let firstName = jQuery("#firstName").val();
@@ -78,28 +78,5 @@ jQuery(document).ready(function () {
             localStorage.setItem('Users', JSON.stringify(customerArr));
         }
     });
-    show_customers_entries();
-
-    function show_customers_entries() {
-        let customerInformation = JSON.parse(localStorage.getItem('Users'));        
-        for (let i = 0; i <= customerInformation.length - 1; i++) {
-            let takeObject = customerInformation[i];
-            // let convertToarray = Object.entries(takeObject);
-            let convertToarray = jQuery.map(takeObject, function (value, index) {
-                return [index, value];
-            });
-            let tbody ='';          
-                tbody += "<tr  id='row_" + "'>";
-                tbody += "<td>" +takeObject.FirstName+ "</td>"; 
-                tbody += "<td>" +takeObject.LastName+ "</td>"; 
-                tbody += "<td>" +takeObject.Email+ "</td>"; 
-                tbody += "<td>" +takeObject. Address_Plate+ "</td>"; 
-                tbody += "<td>" +takeObject.Background+ "</td>"; 
-                tbody += "<td>" +takeObject.TextColor+ "</td>"; 
-                tbody += "<td>" +takeObject.FontStyle+ "</td>"; 
-                tbody += "</tr>";
-                jQuery("#table").append(tbody);
-            // }
-        }
-    }
+    
 });
