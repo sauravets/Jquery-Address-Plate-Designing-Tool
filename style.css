@@ -1,3 +1,6 @@
+/* body{
+    overflow: hidden;
+} */
 .form{
     display: block;
     padding-bottom: 50px;
@@ -195,12 +198,12 @@ p{
     margin-left: auto;
     margin-right: auto;
   }
-  .done:active{
+.done:active{
       box-shadow: 0 1px #666;
       transform: translateY(2px);
   }
   /* The popup form - hidden by default */
-  .form-popup{
+.form-popup{
       display: none;
       border: 3px solid #f1f1f1;
       width: 450px;
@@ -245,7 +248,7 @@ p{
     margin-bottom:10px;
     opacity: 0.8;
   }
-  .form-container .close {
+.form-container .close {
     background-color: red;
     color: white;
     padding: 16px 20px;
@@ -255,13 +258,90 @@ p{
     margin-bottom: 10px;
     opacity: 0.8;
   }
-  .form-container .save:hover, .close:hover {
+.form-container .save:hover, .close:hover {
     opacity: 1;
   }
-  .information{
-      text-align: center;
+.information{
+    text-align: center;
   }
+#customerInformation{
+    display: inline-block;
+}
+h1{
+    font-family: 'Times New Roman', Times, serif;
+}
+#search{
+    font-size: 18px;
+    margin-bottom: 20px;
+    margin-top: 2px;    
+    padding: 5px; 
+}
+#table {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
 
+#table td, #table th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#table tr:nth-child(even){background-color: #f2f2f2;}
+
+#table tr:hover {background-color: #ddd;}
+
+#table th{
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    background-color: #04AA6D;
+    color: black;
+}
+#customerInformation{
+    display: inline-block;
+}
+h1{
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+}
+#search{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 18px;
+    margin-bottom: 20px;
+    margin-top: 2px;    
+    padding: 5px; 
+}
+#table {
+    display: table;
+    table-layout: fixed;
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;    
+}
+
+#table td, #table th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#table tr:nth-child(even){background-color: #f2f2f2;}
+
+#table tr:hover {background-color: #ddd;}
+
+#table th{
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    background-color: #04AA6D;
+    color: black;
+}
+#tbody{
+    text-align: center;
+    font-family: Georgia;
+}
 /* Starting Media Queries */
 @media only screen and (max-width:1108px){
     #myinput{
